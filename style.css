@@ -1,0 +1,206 @@
+
+     body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      /* Background image and overlay */
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #444;
+      display: flex;
+      flex-direction: column;
+      min-height: 600px;
+      max-width: 350px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 15px;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(255, 255, 255, 0.75);
+      z-index: -1;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 10px;
+      border-radius: 10px;
+    }
+    header h1 {
+      margin: 0;
+      font-weight: 600;
+      color: #d85c5c;
+      font-size: 1.8rem;
+    }
+    header p {
+      margin: 4px 0 0;
+      font-size: 1rem;
+      color: #a35f5f;
+    }
+    .bouquet-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .bouquet-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(216,92,92,0.3);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.25s ease, transform 0.25s ease;
+    }
+    .bouquet-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 12px rgba(216,92,92,0.5);
+    }
+    .bouquet-image {
+      width: 100%;
+      height: auto;
+      max-height: 180px;
+      object-fit: cover;
+      background-color: #fff;
+      border-bottom: 2px solid #d85c5c;
+    }
+    .bouquet-info {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+    }
+    .bouquet-name {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin: 0 0 6px;
+      color: #d85c5c;
+    }
+    .bouquet-desc {
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+      color: #666;
+    }
+    .bouquet-price {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #9d3b3b;
+      margin-bottom: 6px;
+    }
+    .order-btn {
+      background-color: #d85c5c;
+      border: none;
+      color: white;
+      padding: 8px 0;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom: 6px;
+      transition: background-color 0.25s ease;
+    }
+    .order-btn:hover {
+      background-color: #b04444;
+    }
+    form {
+      margin-top: 25px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(216,92,92,0.3);
+    }
+    form h2 {
+      margin-top: 0;
+      font-weight: 600;
+      color: #d85c5c;
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    form label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+      color: #7a3737;
+    }
+    form input,
+    form textarea,
+    form select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 14px;
+      border-radius: 6px;
+      border: 1px solid #d8cccc;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+    form textarea {
+      min-height: 70px;
+    }
+    form button {
+      background-color: #d85c5c;
+      color: white;
+      border: none;
+      padding: 10px 0;
+      width: 100%;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    } 
+    form button:hover {
+      background-color: #b04444;
+    }
+    .contact-info {
+      margin-top: 30px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 12px;
+      padding: 15px;
+      font-size: 0.9rem;
+      color: #555;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(216,92,92,0.3);
+    }
+    .contact-info p {
+      margin: 6px 0;
+      line-height: 1.4;
+    }
+    .contact-info a {
+      color: #d85c5c;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 350px) {
+      body {
+        max-width: 100vw;
+        padding: 10px;
+      }
+      .bouquet-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (min-width: 600px) {
+      body {
+        max-width: 600px;
+        padding: 25px;
+      }
+      .bouquet-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+    }
+    @media (min-width: 900px) {
+      body {
+        max-width: 900px;
+      }
+      .bouquet-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
